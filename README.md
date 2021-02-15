@@ -1,7 +1,11 @@
-# essential-framework
+# framework-essential
 
 custom barebones css framework
 
-    <link rel="stylesheet"https://github.com/BrijeshSinghal/framework-essential/blob/main/dist/css/main.css">
+for dev
+npm run sass
+
+for use
+currently no cdn, get the essential file from the css and js folders
 
 current version: 1.0
