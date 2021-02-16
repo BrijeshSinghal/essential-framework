@@ -54,7 +54,7 @@ function setProperties(tag, targets, properties) {
 	});
 }
 
-// process expression
+// process expressions
 function processExpressions(expressions, targets) {
 	expressions.forEach((expression, index) => {
 		let tags = getTags(expression);
