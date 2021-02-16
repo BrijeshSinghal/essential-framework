@@ -8,8 +8,23 @@
   margin: 0px auto;
 }
 
-.color-blue {
-  color: red !important;
+.bs-dot {
+  border-style: dotted;
+}
+.bs-dash {
+  border-style: dashed;
+}
+.bs-sol {
+  border-style: solid;
+}
+.bs-dou {
+  border-style: double;
+}
+.bs-no {
+  border-style: none;
+}
+.bs-hid {
+  border-style: hidden;
 }
 
 /*# sourceMappingURL=essential.css.map */

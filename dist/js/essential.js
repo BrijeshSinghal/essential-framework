@@ -1,6 +1,5 @@
-// getting divs
+// getting all tags
 const allTags = document.querySelectorAll("*");
-console.log(allTags);
 
 // get tags
 function getTags(expression) {
@@ -19,15 +18,14 @@ function getTags(expression) {
 // get groups
 function getGroups(expression, className) {
 	let genArr = expression.exec(className);
-	let groupArr = [];
+	let groups = [];
 	if (genArr != null) {
-		// console.log(genArr);
 		genArr.forEach((value, index) => {
 			if (index > 0) {
-				groupArr.push(value);
+				groups.push(value);
 			}
 		});
-		return groupArr;
+		return groups;
 	} else {
 		return false;
 	}
@@ -35,37 +33,39 @@ function getGroups(expression, className) {
 
 // generate properties (combine groups and replace , and - with a whitespace)
 function generateProperties(groups) {
-	let genPropArr = [];
+	let properties = [];
 	groups.forEach((group) => {
 		// use regular expression with a g tag to replace all occurence instead of just the first one
 		let genProp = group.replace(/-/g, " ");
-		genPropArr.push(genProp);
+		genProp = genProp.replace(/,/g, ", ");
+		properties.push(genProp);
 	});
-	return genPropArr;
+	return properties;
 }
 
 // set properties
 function setProperties(tag, targets, properties) {
-	targets.forEach((target) => {
-		properties.forEach((prop) => {
-			tag.style.setProperty(target, prop);
-		});
+	targets.forEach((target, index) => {
+		if (properties.length == 1)
+			tag.style.setProperty(target, properties[0]);
+		else {
+			tag.style.setProperty(target, properties[index]);
+		}
 	});
 }
 
 // process expression
-function processExpressions(expressionArr, targetArr) {
-	expressionArr.forEach((expression, index) => {
+function processExpressions(expressions, targets) {
+	expressions.forEach((expression, index) => {
 		let tags = getTags(expression);
 		if (!tags) return;
 		tags.forEach((tag) => {
 			tag.classList.forEach((tagClass) => {
 				let groups = getGroups(expression, tagClass);
 				if (!groups) return;
-				let genPropArr = generateProperties(groups);
-				console.log(targetArr[index]);
-				console.log(genPropArr);
-				setProperties(tag, targetArr[index], genPropArr);
+				let properties = generateProperties(groups);
+				console.log(targets[index], properties);
+				setProperties(tag, targets[index], properties);
 			});
 		});
 	});
@@ -135,18 +135,49 @@ processExpressions(
 	]
 );
 
-// class border
-const borderRE = /^border-(\S{1,100})$/;
+// class height
+const heightRE = /^h-(\S{1,100})$/;
+processExpressions([heightRE], [["height"]]);
 
-// process class border
-processExpressions([borderRE], [["border"]]);
+// class height
+const widthRE = /^w-(\S{1,100})$/;
+const maxWidthRE = /^mw-(\S{1,100})$/;
+processExpressions([widthRE, maxWidthRE], [["width", "max-width"]]);
 
 // class color
 const colorRE = /^color-(\S{1,100})$/;
 processExpressions([colorRE], [["color"]]);
+
+// class background
+const backgroundColorRE = /^bgc-(\S{1,100})$/;
+processExpressions([backgroundColorRE], [["background-color"]]);
+
+// class border
+const borderRE = /^border-(\S{1,100})$/;
+const borderStyleRE = /^bs-(\S{1,100})/;
+const borderWidthRE = /^bw-(\S{1,100})/;
+const borderColorRE = /^bc-(\S{1,100})/;
+const borderRadiusRE = /^br-(\S{1,100})/;
+
+// process class border
+processExpressions(
+	[borderRE, borderStyleRE, borderWidthRE, borderColorRE, borderRadiusRE],
+	[
+		["border"],
+		["border-style"],
+		["border-width"],
+		["border-color"],
+		["border-radius"],
+	]
+);
 
 // class container
 const containerRE = /^container-(\S{1,100})$/;
 
 // process class container
 processExpressions([containerRE], [["width"]]);
+
+const test = /^test-(\S{1,100})-(\S{1,100})$/;
+let testTags = getTags(test);
+console.log(getGroups(test, testTags[0].classList[2]));
+processExpressions([test], [["background-color", "width"]]);
