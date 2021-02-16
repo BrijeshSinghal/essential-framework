@@ -31,13 +31,11 @@
 }
 
 // visibility
-.v {
-	&-visible {
-		visibility: visible;
-	}
-	&-hidden {
-		visibility: hidden;
-	}
+.visible {
+	visibility: visible;
+}
+.invisible {
+	visibility: hidden;
 }
 
 // position
@@ -183,12 +181,6 @@
 	&-italic {
 		font-style: italic;
 	}
-	&-normal {
-		font-style: normal;
-	}
-	&-bold {
-		font-weight: bold;
-	}
 }
 
 // list
@@ -250,7 +242,7 @@
 .clearfix::after {
 	content: "";
 	clear: both;
-	display: table;
+	display: block;
 }
 
 // flex box
@@ -314,6 +306,24 @@
 	}
 	&-stretch {
 		align-items: stretch;
+	}
+}
+
+.align-self {
+	&-start {
+		align-self: flex-start;
+	}
+	&-center {
+		align-self: center;
+	}
+	&-end {
+		align-self: flex-end;
+	}
+	&-baseline {
+		align-self: baseline;
+	}
+	&-stretch {
+		align-self: stretch;
 	}
 }
 

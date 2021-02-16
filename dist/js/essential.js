@@ -45,6 +45,7 @@ function generateProperties(groups) {
 
 // set properties
 function setProperties(tag, targets, properties) {
+	console.log(tag, targets, properties);
 	targets.forEach((target, index) => {
 		if (properties.length == 1)
 			tag.style.setProperty(target, properties[0]);
@@ -73,14 +74,15 @@ function processExpressions(expressions, targets) {
 // regular expressions
 // class height
 const heightRE = /^h-(\S{1,100})$/;
+const maxHeightRE = /^mh-(\S{1,100})$/;
 // process class height
-processExpressions([heightRE], [["height"]]);
+processExpressions([heightRE, maxHeightRE], [["height", "max-height"]]);
 
 // class width
 const widthRE = /^w-(\S{1,100})$/;
 const maxWidthRE = /^mw-(\S{1,100})$/;
 // process class width
-processExpressions([widthRE, maxWidthRE], [["width", "max-width"]]);
+processExpressions([widthRE, maxWidthRE], [["width"], ["max-width"]]);
 
 // class columnn
 const columnRE = /^col-(\S{1,100})$/;
@@ -159,19 +161,38 @@ processExpressions(
 
 // class border
 const borderRE = /^border-(\S{1,100})$/;
+const borderTopRE = /^border-top-(\S{1,100})/;
+const borderBottomRE = /^border-bottom-(\S{1,100})/;
+const borderRightRE = /^border-right-(\S{1,100})/;
+const borderLeftRE = /^border-left-(\S{1,100})/;
 const borderStyleRE = /^bs-(\S{1,100})/;
 const borderWidthRE = /^bw-(\S{1,100})/;
 const borderColorRE = /^bc-(\S{1,100})/;
 const borderRadiusRE = /^br-(\S{1,100})/;
+
 // process class border
 processExpressions(
-	[borderRE, borderStyleRE, borderWidthRE, borderColorRE, borderRadiusRE],
+	[
+		borderRE,
+		borderStyleRE,
+		borderWidthRE,
+		borderColorRE,
+		borderRadiusRE,
+		borderTopRE,
+		borderBottomRE,
+		borderRightRE,
+		borderLeftRE,
+	],
 	[
 		["border"],
 		["border-style"],
 		["border-width"],
 		["border-color"],
 		["border-radius"],
+		["border-top"],
+		["border-bottom"],
+		["border-right"],
+		["border-left"],
 	]
 );
 
@@ -179,15 +200,27 @@ processExpressions(
 const textIndentRE = /^indent-(\S{1,100})$/;
 const lineHeightRE = /^line-(\S{1,100})$/;
 const fontSizeRE = /^font-size-(\S{1,100})$/;
+const fontWeightRE = /^font-weight-(\S{1,100})$/;
 // process class typography
 processExpressions(
-	[textIndentRE, lineHeightRE, fontSizeRE],
-	[["text-indent"], ["line-height"], ["font-size"]]
+	[textIndentRE, lineHeightRE, fontSizeRE, fontWeightRE],
+	[["text-indent"], ["line-height"], ["font-size"], ["font-weight"]]
 );
 
 // class opacity
 const opacityRE = /^op-(\S{1,100})$/;
+// process class opacity
 processExpressions([opacityRE], [["opacity"]]);
+
+// class flex
+const flexRE = /^flex-(\S{1,100})$/;
+const flexBasisRE = /^flex-basis-(\S{1,100})$/;
+const orderRE = /^order-(\S{1,100})$/;
+// process class flex
+processExpressions(
+	[flexRE, flexBasisRE, orderRE],
+	[["flex"], ["flex-basis"], ["order"]]
+);
 
 // const test = /^test-(\S{1,100})-(\S{1,100})$/;
 // let testTags = getTags(test);
