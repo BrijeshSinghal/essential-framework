@@ -1,17 +1,15 @@
+// everything
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-// measurements
-
 .container {
-	margin: 0px auto;
+	margin: auto;
 }
 
 // borders
-
 // border style
 .bs {
 	&-dot {
@@ -20,20 +18,64 @@
 	&-dash {
 		border-style: dashed;
 	}
-
 	&-sol {
 		border-style: solid;
 	}
-
 	&-dou {
 		border-style: double;
 	}
-
 	&-no {
 		border-style: none;
 	}
-
 	&-hid {
 		border-style: hidden;
+	}
+}
+
+// text
+.text {
+	&-center {
+		text-align: center;
+	}
+	&-left {
+		text-align: left;
+	}
+	&-right {
+		text-align: right;
+	}
+	&-justify {
+		text-align: justify;
+	}
+	&-over {
+		text-decoration: overline;
+	}
+	&-line {
+		text-decoration: line-through;
+	}
+	&-under {
+		text-decoration: underline;
+	}
+	&-none {
+		text-decoration: none;
+	}
+	&-uppercase {
+		text-transform: uppercase;
+	}
+	&-lowercase {
+		text-transform: lowercase;
+	}
+	&-capitalize {
+		text-transform: capitalize;
+	}
+}
+font {
+	&-italic {
+		font-style: italic;
+	}
+	&-normal {
+		font-style: normal;
+	}
+	&-bold {
+		font-weight: bold;
 	}
 }

@@ -5,7 +5,7 @@
 }
 
 .container {
-  margin: 0px auto;
+  margin: auto;
 }
 
 .bs-dot {
@@ -25,6 +25,50 @@
 }
 .bs-hid {
   border-style: hidden;
+}
+
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-justify {
+  text-align: justify;
+}
+.text-over {
+  text-decoration: overline;
+}
+.text-line {
+  text-decoration: line-through;
+}
+.text-under {
+  text-decoration: underline;
+}
+.text-none {
+  text-decoration: none;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-lowercase {
+  text-transform: lowercase;
+}
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+font-italic {
+  font-style: italic;
+}
+font-normal {
+  font-style: normal;
+}
+font-bold {
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=essential.css.map */

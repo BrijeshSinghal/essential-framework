@@ -64,7 +64,6 @@ function processExpressions(expressions, targets) {
 				let groups = getGroups(expression, tagClass);
 				if (!groups) return;
 				let properties = generateProperties(groups);
-				console.log(targets[index], properties);
 				setProperties(tag, targets[index], properties);
 			});
 		});
@@ -72,7 +71,6 @@ function processExpressions(expressions, targets) {
 }
 
 // regular expressions
-
 // class margin
 const marginRE = /^m-(\S{1,100})$/;
 const marginTopRE = /^mt-(\S{1,100})$/;
@@ -81,7 +79,6 @@ const marginLeftRE = /^ml-(\S{1,100})$/;
 const marginRightRE = /^mr-(\S{1,100})$/;
 const marginXRE = /^mx-(\S{1,100})$/;
 const marginYRE = /^my-(\S{1,100})$/;
-
 // process class margin
 processExpressions(
 	[
@@ -112,7 +109,6 @@ const paddingLeftRE = /^pl-(\S{1,100})$/;
 const paddingRightRE = /^pr-(\S{1,100})$/;
 const paddingXRE = /^px-(\S{1,100})$/;
 const paddingYRE = /^py-(\S{1,100})$/;
-
 // process class padding
 processExpressions(
 	[
@@ -137,19 +133,23 @@ processExpressions(
 
 // class height
 const heightRE = /^h-(\S{1,100})$/;
+// process class height
 processExpressions([heightRE], [["height"]]);
 
-// class height
+// class width
 const widthRE = /^w-(\S{1,100})$/;
 const maxWidthRE = /^mw-(\S{1,100})$/;
+// process class width
 processExpressions([widthRE, maxWidthRE], [["width", "max-width"]]);
 
 // class color
+// process class color
 const colorRE = /^color-(\S{1,100})$/;
 processExpressions([colorRE], [["color"]]);
 
 // class background
 const backgroundColorRE = /^bgc-(\S{1,100})$/;
+// process class background
 processExpressions([backgroundColorRE], [["background-color"]]);
 
 // class border
@@ -158,7 +158,6 @@ const borderStyleRE = /^bs-(\S{1,100})/;
 const borderWidthRE = /^bw-(\S{1,100})/;
 const borderColorRE = /^bc-(\S{1,100})/;
 const borderRadiusRE = /^br-(\S{1,100})/;
-
 // process class border
 processExpressions(
 	[borderRE, borderStyleRE, borderWidthRE, borderColorRE, borderRadiusRE],
@@ -171,13 +170,22 @@ processExpressions(
 	]
 );
 
+// class text
+const textIndentRE = /^indent-(\S{1,100})$/;
+const lineHeightRE = /^line-(\S{1,100})$/;
+const fontSizeRE = /^font-size-(\S{1,100})$/;
+// process class text
+processExpressions(
+	[textIndentRE, lineHeightRE, fontSizeRE],
+	[["text-indent"], ["line-height"], ["font-size"]]
+);
+
 // class container
 const containerRE = /^container-(\S{1,100})$/;
-
 // process class container
 processExpressions([containerRE], [["width"]]);
 
-const test = /^test-(\S{1,100})-(\S{1,100})$/;
-let testTags = getTags(test);
-console.log(getGroups(test, testTags[0].classList[2]));
-processExpressions([test], [["background-color", "width"]]);
+// const test = /^test-(\S{1,100})-(\S{1,100})$/;
+// let testTags = getTags(test);
+// console.log(getGroups(test, testTags[0].classList[2]));
+// processExpressions([test], [["background-color", "width"]]);
