@@ -6,8 +6,8 @@
 	line-height: 1.5;
 }
 
-body {
-	font-size: 16px;
+html {
+	font-size: 100%;
 }
 
 // container
@@ -36,6 +36,12 @@ body {
 	&-flex {
 		display: flex;
 	}
+	&-inherit {
+		display: inherit;
+	}
+	&-initial {
+		display: initial;
+	}
 }
 
 // visibility
@@ -62,6 +68,12 @@ body {
 	}
 	&-sticky {
 		position: sticky;
+	}
+	&-inherit {
+		display: inherit;
+	}
+	&-initial {
+		display: initial;
 	}
 }
 
@@ -91,6 +103,12 @@ body {
 	&-text-bottom {
 		vertical-align: text-bottom;
 	}
+	&-inherit {
+		display: inherit;
+	}
+	&-initial {
+		display: initial;
+	}
 }
 
 // overflow
@@ -107,6 +125,12 @@ body {
 	&-auto {
 		overflow: auto;
 	}
+	&-inherit {
+		display: inherit;
+	}
+	&-initial {
+		display: initial;
+	}
 }
 
 .center {
@@ -118,6 +142,11 @@ body {
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+	}
+	&-x {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 	&-y {
 		position: absolute;
@@ -189,6 +218,17 @@ body {
 	&-italic {
 		font-style: italic;
 	}
+}
+
+// link
+.link {
+	text-decoration: none;
+	color: grey;
+	cursor: pointer;
+}
+
+.link:hover {
+	color: black;
 }
 
 // list
@@ -385,5 +425,9 @@ body {
 	}
 	input:focus {
 		border: 1px solid black;
+	}
+	input[type="submit"] {
+		border: none;
+		outline: none;
 	}
 }

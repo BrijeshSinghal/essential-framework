@@ -5,8 +5,8 @@
   line-height: 1.5;
 }
 
-body {
-  font-size: 16px;
+html {
+  font-size: 100%;
 }
 
 .container {
@@ -32,6 +32,12 @@ body {
 .d-flex {
   display: flex;
 }
+.d-inherit {
+  display: inherit;
+}
+.d-initial {
+  display: initial;
+}
 
 .visible {
   visibility: visible;
@@ -55,6 +61,12 @@ body {
 }
 .pos-sticky {
   position: sticky;
+}
+.pos-inherit {
+  display: inherit;
+}
+.pos-initial {
+  display: initial;
 }
 
 .yalign-baseline {
@@ -81,6 +93,12 @@ body {
 .yalign-text-bottom {
   vertical-align: text-bottom;
 }
+.yalign-inherit {
+  display: inherit;
+}
+.yalign-initial {
+  display: initial;
+}
 
 .over-visible {
   overflow: visible;
@@ -94,6 +112,12 @@ body {
 .over-auto {
   overflow: auto;
 }
+.over-inherit {
+  display: inherit;
+}
+.over-initial {
+  display: initial;
+}
 
 .center-parent {
   position: relative;
@@ -103,6 +127,11 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.center-x {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .center-y {
   position: absolute;
@@ -165,6 +194,16 @@ body {
 
 .font-italic {
   font-style: italic;
+}
+
+.link {
+  text-decoration: none;
+  color: grey;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: black;
 }
 
 .list-none {
@@ -337,6 +376,10 @@ body {
 }
 .form-group input:focus {
   border: 1px solid black;
+}
+.form-group input[type=submit] {
+  border: none;
+  outline: none;
 }
 
 /*# sourceMappingURL=essential.css.map */
