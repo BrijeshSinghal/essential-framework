@@ -3,12 +3,20 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	line-height: 1.5;
+}
+
+body {
+	font-size: 16px;
 }
 
 // container
 .container {
 	width: 100%;
 	margin: auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
 
 // display
@@ -348,5 +356,34 @@
 	}
 	&-stretch {
 		align-content: stretch;
+	}
+}
+
+// button
+.btn {
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
+.btn:hover {
+	opacity: 0.9;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	font-size: 1rem;
+	padding: 0.5rem;
+	label {
+		margin-bottom: 0.5rem;
+	}
+	input {
+		padding: 0.5rem;
+		outline: none;
+		border: 1px solid grey;
+	}
+	input:focus {
+		border: 1px solid black;
 	}
 }

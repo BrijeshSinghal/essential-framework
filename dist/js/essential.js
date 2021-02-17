@@ -45,7 +45,7 @@ function generateProperties(groups) {
 
 // set properties
 function setProperties(tag, targets, properties) {
-	console.log(tag, targets, properties);
+	// console.log(tag, targets, properties);
 	targets.forEach((target, index) => {
 		if (properties.length == 1)
 			tag.style.setProperty(target, properties[0]);
@@ -95,9 +95,9 @@ const colorRE = /^color-(\S{1,100})$/;
 processExpressions([colorRE], [["color"]]);
 
 // class background
-const backgroundColorRE = /^bgc-(\S{1,100})$/;
+const backgroundRE = /^bg-(\S{1,100})$/;
 // process class background
-processExpressions([backgroundColorRE], [["background-color"]]);
+processExpressions([backgroundRE], [["background"]]);
 
 // class margin
 const marginRE = /^m-(\S{1,100})$/;
@@ -169,6 +169,7 @@ const borderStyleRE = /^bs-(\S{1,100})/;
 const borderWidthRE = /^bw-(\S{1,100})/;
 const borderColorRE = /^bc-(\S{1,100})/;
 const borderRadiusRE = /^br-(\S{1,100})/;
+const outlineRE = /^outline-(\S{1,100})/;
 
 // process class border
 processExpressions(
@@ -182,6 +183,7 @@ processExpressions(
 		borderBottomRE,
 		borderRightRE,
 		borderLeftRE,
+		outlineRE,
 	],
 	[
 		["border"],
@@ -193,6 +195,7 @@ processExpressions(
 		["border-bottom"],
 		["border-right"],
 		["border-left"],
+		["outline"],
 	]
 );
 
@@ -222,7 +225,4 @@ processExpressions(
 	[["flex"], ["flex-basis"], ["order"]]
 );
 
-// const test = /^test-(\S{1,100})-(\S{1,100})$/;
-// let testTags = getTags(test);
-// console.log(getGroups(test, testTags[0].classList[2]));
-// processExpressions([test], [["background-color", "width"]]);
+const buttonRE = /^flex-(\S{1,100})$/;
