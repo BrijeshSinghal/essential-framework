@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/css/essential.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Essential CSS Framework</title>
+</head>
+<body class="h-100vh">
+    <navbar class="container bg-#db3030 h-8% align-items-center p-1rem-2rem color-#fff">
+        <h4 class="font-weight-bold mr-auto">ESSENTIAL</h4>
+        <a class="link mr-1rem color-#fff">Home</a>
+        <a class="link mr-1rem color-#fff">Documentation</a>
+        <a class="link color-#fff">Contact</a>
+    </navbar>
+    <div class="container h-92%">
+        <div class="left col-50% h-100% border-right-5px-solid-#db3030 p-2rem d-flex flex-col justify-content-center align-items-start ju">
+            <h4 class="mb-1rem">Essential: A dynamic, barebones CSS framework</h4>
+            <p class="mb-1rem">The aim is to allow the developer to be able to enter whatever property value/measurement he wants, as classes. For example,</p>
+            <p class="monospace p-.5rem bg-lightgrey mb-1rem">m-300px</p>
+            <p class="mb-1rem">translates to</p>
+            <p class="monospace p-.5rem bg-lightgrey mb-1rem">margin: 300px</p>
+            <h4 class="mb-1rem">Extremely light weight</h4>
+            <p class="mb-1rem">Contains only essential CSS properties. The goal here is to give easy access to basic utilities as classes. While it is possible to design an entire website using essential only, it is not intended to serve as your own custom stylesheet replacement.</p>
+            <p class="mb-1rem">A complete list of availaible classes can be found on the documentation page.</p>
+            <h4 class="mb-1rem">Familiar Bootstrap Terminology</h4>
+            <p class="mb-1rem">I have tried to make almost every class similar to/same as it's counter-part in Bootstrap. What this framework does not contain is all the clutter that comes with Bootstrap which you do not need if you want to build something quick, while still giving the developer access to complete tools for customisation.</p>
+            <h4 class="mb-1rem">Work in progress</h4>
+            <p class="mb-1rem">I created this for my own personal use to be able to create a layout for a project quickly and then use custom styling to add details. I have uploaded the complete source to GitHub. This is written in SCSS and JS.</p>
+        </div>
+        <div class="right col-50% h-100% p-2rem d-flex flex-col justify-content-center align-items-center">
+            <h4 class="mb-1rem">Classes used on the current page</h4>
+            <p id="source" class="monospace p-.5rem bg-lightgrey mb-1rem">Classes</p>
+        </div>
+    </div>
+    <script src="../dist/js/essential.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+/* font - open sans (google fonts) */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+@media screen and (max-width: 768px) {
+	body {
+		height: auto !important;
+	}
+	div.container {
+		flex-direction: column !important;
+		height: auto !important;
+	}
+	navbar {
+		height: auto !important;
+	}
+	.left {
+		max-width: 100% !important;
+		width: 100% !important;
+		border: none !important;
+		height: auto !important;
+	}
+	.right {
+		width: 100% !important;
+		border: none !important;
+		height: auto !important;
+	}
+}
+
+html {
+	font-family: "Open Sans", sans-serif;
+}
