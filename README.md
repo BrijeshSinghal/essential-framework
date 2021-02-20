@@ -1,17 +1,18 @@
-# framework-essential
+# essential framework
 
 custom barebones css framework
 
-for dev
+## for dev
 
-npm run sass
+> npm run sass
 
-for use
+## for use
 
-currently no cdn, get the essential file from the css and js folders
+> <link rel="stylesheet" href="https://essentialframework.com/main/essential.css">
+> <script src="https://essentialframework.com/main/essential.js"></script>
 
-properties applied with javascript override all stylesheets
+**properties applied with javascript override all stylesheets**
 
-to use custom properties with a framework class, use the !important tag
+**to use custom properties with a framework class, use the !important tag**
 
-current version: 1.0
+_current version: alpha_
