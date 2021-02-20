@@ -13,7 +13,6 @@ html {
 // container
 .container {
 	width: 100%;
-	margin: auto;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -139,6 +138,7 @@ html {
 	}
 }
 
+// custom element centering
 .center {
 	&-parent {
 		position: relative;
@@ -464,5 +464,6 @@ h6 {
 	input[type="submit"] {
 		border: none;
 		outline: none;
+		cursor: pointer;
 	}
 }

@@ -225,4 +225,7 @@ processExpressions(
 	[["flex"], ["flex-basis"], ["order"]]
 );
 
-const buttonRE = /^flex-(\S{1,100})$/;
+// class button
+const buttonRE = /^btn-(\S{1,100})$/;
+// process class button
+processExpressions([buttonRE], [["padding"]]);
