@@ -10,7 +10,7 @@ custom barebones css framework
 
 > &lt;link rel="stylesheet" href="https://essentialframework.com/main/essential.css"&gt;
 
-> &lt;script src="https://essentialframework.com/main/essential.js"&gt;&lt;/script&gt;
+> &lt;script src="https://essentialframework.com/main/essential.js"&gt; &lt;/script&gt;
 
 **properties applied with javascript override all stylesheets**
 
