@@ -11,9 +11,14 @@ html {
 
 .container {
   width: 100%;
-  margin: auto;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 
@@ -31,6 +36,15 @@ html {
 }
 .d-flex {
   display: flex;
+}
+.d-inline-flex {
+  display: inline-flex;
+}
+.d-grid {
+  display: grid;
+}
+.d-inline-grid {
+  display: inline-grid;
 }
 .d-inherit {
   display: inherit;
@@ -408,6 +422,7 @@ h6 {
 .form-group input[type=submit] {
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=essential.css.map */

@@ -41,6 +41,15 @@ html {
 	&-flex {
 		display: flex;
 	}
+	&-inline-flex {
+		display: inline-flex;
+	}
+	&-grid {
+		display: grid;
+	}
+	&-inline-grid {
+		display: inline-grid;
+	}
 	&-inherit {
 		display: inherit;
 	}
